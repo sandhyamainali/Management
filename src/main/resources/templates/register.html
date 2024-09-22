@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+	<h3>Registration page</h3>
+	<form action="#" th:action="@{/register}" th:object="${student}" enctype="multipart/form-data" method="post">
+		<fieldset>
+			<label for="fname">First Name</label>
+			           <input type="text" th:field="*{fname}" id="fname" placeholder="Enter First Name">
+			           <span th:if="${#fields.hasErrors('fname')}" th:errors="*{fname}"></span>
+
+			           <!-- Last Name -->
+			           <label for="lname">Last Name</label>
+			           <input type="text" th:field="*{lname}" id="lname" placeholder="Enter Last Name">
+			           <span th:if="${#fields.hasErrors('lname')}" th:errors="*{lname}"></span>
+<br>
+<br>
+		<label for="email">Email</label>
+		
+		
+		<input type="email" th:field="*{email}" id="email" placeholder="Email" name="email" class="form-control">
+		<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+		
+		<br>
+		<br>
+		<label for="dob">Date of Birth</label>
+		            <input type="date" th:field="*{dateOfBirth}" id="dob">
+		            <span th:if="${#fields.hasErrors('dateOfBirth')}" th:errors="*{dateOfBirth}"></span>
+		            
+<br>
+<br>
+		<label for="address">Address</label>
+		
+		
+		<input type="text" th:field="*{address}" id="address" placeholder="address" name="address">
+		<span th:if="${#fields.hasErrors('address')}" th:errors="address"></span>
+		<br>
+		<br>
+		<label for="gender">Gender</label>
+				
+		<input type="radio" th:field="*{gender}" id="female" value="Female">Female
+		<input type="radio" th:field="*{gender}" id="male" value="Male">Male
+		<input type="radio" th:field="*{gender}" id="na" value="N/A">N/A
+				<span th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"></span>
+				<br>
+				<br>
+		<label for="course">Course</label>
+				<input type="checkbox" th:field="*{course}" id="science" value="Science">Science
+				<input type="checkbox" th:field="*{course}" id="management" value="Management">Management
+				<input type="checkbox" th:field="*{course}" id="business" value="Business">Business
+				<span th:if="${#fields.hasErrors('course')}" th:errors="*{course}"></span>
+							<br>
+							<br>
+
+		
+		<p><input type="submit" value="Submit" class="lw"/>
+			<a th:href="details"></a>
+		</fieldset>
+	</form>
+</body>
+</html>
+

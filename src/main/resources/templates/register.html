@@ -7,6 +7,7 @@
 	<h3>Registration page</h3>
 	<form action="#" th:action="@{/register}" th:object="${student}" enctype="multipart/form-data" method="post">
 		<fieldset>
+			
 			<label for="fname">First Name</label>
 			           <input type="text" th:field="*{fname}" id="fname" placeholder="Enter First Name">
 			           <span th:if="${#fields.hasErrors('fname')}" th:errors="*{fname}"></span>
@@ -26,8 +27,8 @@
 		<br>
 		<br>
 		<label for="dob">Date of Birth</label>
-		            <input type="date" th:field="*{dateOfBirth}" id="dob">
-		            <span th:if="${#fields.hasErrors('dateOfBirth')}" th:errors="*{dateOfBirth}"></span>
+		            <input type="date" th:field="*{dateofbirth}" id="dob">
+		            <span th:if="${#fields.hasErrors('dateofbirth')}" th:errors="*{dateofbirth}"></span>
 		            
 <br>
 <br>
@@ -54,7 +55,16 @@
 							<br>
 							<br>
 
-		
+							<label for="username">Username</label>
+									
+									
+									<input type="text" th:field="*{username}" id="username" placeholder="UserName" name="UserName">
+									<span th:if="${#fields.hasErrors('username')}" th:errors="username"></span>
+									<label for="password">Password</label>
+																		
+																		
+								<input type="text" th:field="*{password}" id="password" placeholder="password" name="password">
+								<span th:if="${#fields.hasErrors('password')}" th:errors="password"></span>
 		<p><input type="submit" value="Submit" class="lw"/>
 			<a th:href="details"></a>
 		</fieldset>

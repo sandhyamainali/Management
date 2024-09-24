@@ -2,7 +2,9 @@ package com.example.demo.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 @Entity
+//@Table (name="student")
 public class Admin {
 	private String password;
 	private String userName;

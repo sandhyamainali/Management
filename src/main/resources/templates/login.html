@@ -6,7 +6,7 @@
 </head>
 <body>
 	<h3 class="page">Login Page</h3>
-	<form action="#" th:action="@{/login}" th:object="${user}" enctype="multipart/form-data" method="post" class="form">
+	<form action="#" th:action="@{/login}" th:object="${student}" enctype="multipart/form-data" method="post" class="form">
 		<fieldset>
 		<div >
 			<span th:if="${error}" th:text="${error}"></span>
